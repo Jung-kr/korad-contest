@@ -16,29 +16,29 @@ general_to_housing = None
 def load_and_preprocess_data():
     global lrp, industry_to_housing, general_to_housing
     # 데이터 로드 및 전처리
-    seoul_1 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (1).xls", header = 11)
-    seoul_2 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (2).xls", header = 11)
-    seoul_3 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (3).xls", header = 11)
-    seoul_4 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (4).xls", header = 11)
-    seoul_5 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (5).xls", header = 11)
-    seoul_6 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (6).xls", header = 11)
-    seoul_7 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (7).xls", header = 11)
-    seoul_8 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (8).xls", header = 11)
-    seoul_9 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (9).xls", header = 11)
-    seoul_10 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (10).xls", header = 11) 
-    seoul_11 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (11).xls", header = 11)
+    seoul_1 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (1).xls", header = 11)
+    seoul_2 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (2).xls", header = 11)
+    seoul_3 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (3).xls", header = 11)
+    seoul_4 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (4).xls", header = 11)
+    seoul_5 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (5).xls", header = 11)
+    seoul_6 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (6).xls", header = 11)
+    seoul_7 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (7).xls", header = 11)
+    seoul_8 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (8).xls", header = 11)
+    seoul_9 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (9).xls", header = 11)
+    seoul_10 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (10).xls", header = 11) 
+    seoul_11 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (11).xls", header = 11)
 
-    gyeonggi_1 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (12).xls", header = 11)
-    gyeonggi_2 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (13).xls", header = 11)
-    gyeonggi_3 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (14).xls", header = 11)
-    gyeonggi_4 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (15).xls", header = 11)
-    gyeonggi_5 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (16).xls", header = 11)
-    gyeonggi_6 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (17).xls", header = 11)
-    gyeonggi_7 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (18).xls", header = 11)
-    gyeonggi_8 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (19).xls", header = 11)
-    gyeonggi_9 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (20).xls", header = 11)
-    gyeonggi_10 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (21).xls", header = 11)
-    gyeonggi_11 = pd.read_excel(".\\가구별_전력사용량_data\\가구 평균 월별 전력사용량_20241001 (22).xls", header = 11)
+    gyeonggi_1 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (12).xls", header = 11)
+    gyeonggi_2 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (13).xls", header = 11)
+    gyeonggi_3 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (14).xls", header = 11)
+    gyeonggi_4 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (15).xls", header = 11)
+    gyeonggi_5 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (16).xls", header = 11)
+    gyeonggi_6 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (17).xls", header = 11)
+    gyeonggi_7 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (18).xls", header = 11)
+    gyeonggi_8 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (19).xls", header = 11)
+    gyeonggi_9 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (20).xls", header = 11)
+    gyeonggi_10 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (21).xls", header = 11)
+    gyeonggi_11 = pd.read_excel("/app/가구별_전력사용량_data/가구 평균 월별 전력사용량_20241001 (22).xls", header = 11)
 
     df_seoul = pd.concat([seoul_1, seoul_2, seoul_3, seoul_4, seoul_5, seoul_6, seoul_7, seoul_8, seoul_9, seoul_10, seoul_11])
     df_gyeonggi = pd.concat([gyeonggi_1, gyeonggi_2, gyeonggi_3, gyeonggi_4, gyeonggi_5, gyeonggi_6, gyeonggi_7, gyeonggi_8, gyeonggi_9, gyeonggi_10, gyeonggi_11])
@@ -54,8 +54,8 @@ def load_and_preprocess_data():
     mean_elec = electric.groupby('년월')[['대상가구수(호)', '가구당 평균 전력 사용량(kWh)','가구당 평균 전기요금(원)']].mean()
 
     # 모델 학습용 데이터 준비
-    elec_price = pd.read_excel(".\\발전원별_전력거래_정산단가.xlsx")
-    elec_trade_rate = pd.read_excel(".\\발전원별_전력거래량_비율.xlsx", header = 68)
+    elec_price = pd.read_excel("/app/발전원별_전력거래_정산단가.xlsx")
+    elec_trade_rate = pd.read_excel("/app/발전원별_전력거래량_비율.xlsx", header = 68)
 
     # object type 으로 되어있는 '기간' 컬럼을 날짜타입으로 변환
     elec_price['기간'] = pd.to_datetime(elec_price['기간'])
@@ -138,7 +138,7 @@ def load_and_preprocess_data():
     # y^ = -8266.644 + 1.7751 * y
 
     # 계약종별 판매단가 데이터 로드
-    price_contract = pd.read_excel(".\\연간_계약종별 _판매단가.xlsx")
+    price_contract = pd.read_excel("/app/연간_계약종별 _판매단가.xlsx")
     price_contract.tail()
 
     # 2024년 데이터 필터링
