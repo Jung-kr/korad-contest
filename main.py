@@ -5,8 +5,11 @@ import pandas as pd
 from sklearn.model_selection import train_test_split, cross_validate
 from sklearn.linear_model import LinearRegression, Ridge
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+
 
 # 전역 변수로 학습된 모델 및 데이터 비율 저장
 lrp = None
@@ -154,6 +157,15 @@ async def lifespan(app: FastAPI):
     yield  # 이 부분은 서버가 종료될 때까지 유지됨
 
 app = FastAPI(lifespan=lifespan)    
+
+# CORS 미들웨어 추가
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 모든 도메인에서의 요청을 허용하려면 ["*"]로 설정
+    allow_credentials=True,
+    allow_methods=["*"],  # 모든 HTTP 메서드를 허용
+    allow_headers=["*"],  # 모든 헤더를 허용
+)
 
 # 예측 함수 정의
 def predict_cost(pred_y_value, usage_type):
