@@ -151,10 +151,6 @@ def load_and_preprocess_data():
     industry_to_housing = filtered_data['산업용'].values[0] / filtered_data['주택용'].values[0]
     general_to_housing = filtered_data['일반용'].values[0] / filtered_data['주택용'].values[0]
 
-    # 결과 출력
-    print(f"산업용 / 주택용 비율: {industry_to_housing}")
-    print(f"일반용 / 주택용 비율: {general_to_housing}")
-
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     load_and_preprocess_data()
@@ -178,9 +174,9 @@ def predict_cost(pred_y_value, usage_type):
     predicted_cost = lrp.predict(input_data)[0]
     
     # 용도에 따라 예측값 조정
-    if usage_type == '산업용':
+    if usage_type == 'business':
         predicted_cost *= industry_to_housing
-    elif usage_type == '일반용':
+    elif usage_type == 'general':
         predicted_cost *= general_to_housing
     # 주택용은 예측값 그대로 사용
     
